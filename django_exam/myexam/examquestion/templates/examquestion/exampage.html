@@ -1,0 +1,22 @@
+<form method = "post">
+    {% csrf_token %}
+    <h3>시험지</h3>
+    <p>이름 : <input type="text" name="name" ></p>
+{% if questionlist %}
+    <ol>
+        {% for i in questionlist %}
+        <h2><li>{{ i.question }}</li></h2>
+        <ol>
+            <li>{{ i.choice1 }}<input type="radio" name="{{ i.id }}" value="{{ i.choice1 }}"></li>
+            <li>{{ i.choice2 }} <input type="radio" name="{{ i.id }}" value="{{ i.choice2 }}"></li>
+            <li>{{ i.choice3 }} <input type="radio" name="{{ i.id }}" value="{{ i.choice3 }}"></li>
+            <li>{{ i.choice4 }} <input type="radio" name="{{ i.id }}" value="{{ i.choice4 }}"></li>
+            <li>{{ i.choice5 }} <input type="radio" name="{{ i.id }}" value="{{ i.choice5 }}"></li>
+        </ol>
+        {% endfor %}
+    </ol>
+    <input type="submit" value="제출하기">
+</form>
+{% else %}
+<p>문제가 없습니다.</p>
+{% endif %}

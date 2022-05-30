@@ -1,0 +1,16 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <h1> 문제를 만드세요 </h1>
+    <h3> 문제 수 : 5</h3>
+    <input type = "text" name = "question" placeholder = "문제를 적으세요" style="width : 250px; height: 70px">
+    <br>
+    <input type = "text" name="choice1" placeholder="보기 1번">
+    <input type = "text" name="choice2" placeholder="보기 2번">
+    <input type = "text" name="choice3" placeholder="보기 3번">
+    <input type = "text" name="choice4" placeholder="보기 4번">
+    <input type = "text" name="choice5" placeholder="보기 5번">
+    <input type="text" name="answer" placeholder="답!">
+    <button type = "submit"> 문제 제출 </button>
+    <h2>현재까지 만든 문제 수 : {{ mkt }} </h2>
+</form>
+

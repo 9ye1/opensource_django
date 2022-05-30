@@ -1,0 +1,12 @@
+<ul>
+    {% if student_list %}
+    {% for s in student_list %}
+    <li>
+        <p>이름: {{ s.name }}  -  점수: {{ s.score }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>사용자 정보가 없습니다</p>
+{% endif %}
+
